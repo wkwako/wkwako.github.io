@@ -1581,6 +1581,10 @@ input, select, textarea {
             width: 20rem;
         }
 
+        #projects figure {
+            text-align: center;
+        }
+
 			#main article.active {
 				-moz-transform: translateY(0);
 				-webkit-transform: translateY(0);
