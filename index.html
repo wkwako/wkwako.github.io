@@ -52,7 +52,7 @@
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">about</h2>
-                                <p> I'm a physicist-turned-computer scientist with a BA in Physics and minors in Math and Philosophy, currently finishing an MS in CS at Georgia Tech. I love puzzles in all forms — jigsaw puzzles, spatial puzzles, computational puzzles — and I'm especially drawn to problems at the intersection of education, AI, and interactive systems. Courses like HCI, Game Design, AI, and Game AI have felt less like coursework and more like permission to dig into things I'd be thinking about anyway. </p>
+                                <p> I'm a physicist-turned-computer scientist with a BA in Physics and minors in Math and Philosophy, currently finishing an MS in CS at Georgia Tech. I love puzzles: jigsaw puzzles, spatial puzzles, computational puzzles, and I'm especially drawn to problems at the intersection of education, AI, and interactive systems. Courses like HCI, Game Design, AI, and Game AI have felt less like coursework and more like permission to dig into things I'd be thinking about anyway. </p>
 								<p> More recently, I worked on a project that involved creating a web application that generates computational practice problems for students to solve, with the goal of helping students improve code comprehension skills that often go undertrained. I presented this work at NCME, a national conference on measurement in education. I look forward to continuing to apply what I've learned to areas about which I'm passionate. </p>
 								<p> Outside of academics, my hobbies include video games, D&D, playing the oboe, going on walks, and crocheting.</p>
 							</article>
@@ -60,58 +60,280 @@
 						<!-- Projects -->
 							<article id="projects">
 								<h2 class="major">Projects</h2>
-								<ul>
 
-                                    <li>
-                                        <a href=https://github.com/wkwako/ed-website target="_blank"> <b> Improving Students' Code Comprehension Ability Through LLM-Generated Practice Problems. </b> </a>
-                                        <br>
-                                        <a href=https://wkwako.pythonanywhere.com/ target="_blank"> <b> Website link </b> </a>
-                                        <br>
-                                        Built a web application using Django, Python, HTML, CSS, JavaScript and the OpenAI and Anthropic APIs that generates personalized coding exercises to improve students' code comprehension skills. This skill is fundamental to programming but rarely practiced deliberately. Presented at the National Council on Measurement in Education (NCME) 2026.
-                                        <br>
-                                        <figure>
-                                            <img src="images/website_image.png" width="70%" height="70%">
-                                        </figure> <br>
-                                        
-                                    </li>
+								<style>
+									.proj-list {
+										list-style: none;
+										padding: 0;
+										margin: 0;
+									}
+									.proj-item {
+										padding: 1.6rem 0;
+										border-top: 1px solid rgba(255,255,255,0.12);
+									}
+									.proj-item:last-child {
+										border-bottom: 1px solid rgba(255,255,255,0.12);
+									}
+									.proj-header {
+										display: flex;
+										align-items: flex-start;
+										justify-content: space-between;
+										gap: 1rem;
+										margin-bottom: 0.55rem;
+									}
+									.proj-title {
+										font-size: 1rem;
+										font-weight: 700;
+										color: #ffffff;
+										margin: 0;
+										line-height: 1.4;
+									}
+									.proj-title a {
+										color: #ffffff;
+										border-bottom: none;
+										text-decoration: none;
+									}
+									.proj-title a:hover { color: #9ecfff; }
+									.proj-badge {
+										flex-shrink: 0;
+										font-size: 0.65rem;
+										font-weight: 700;
+										letter-spacing: 0.08em;
+										text-transform: uppercase;
+										padding: 0.2rem 0.55rem;
+										border-radius: 3px;
+										margin-top: 0.15rem;
+									}
+									.badge-inprogress {
+										background: rgba(255,180,50,0.15);
+										color: #ffcc66;
+										border: 1px solid rgba(255,180,50,0.35);
+									}
+									.badge-presented {
+										background: rgba(100,200,150,0.12);
+										color: #7de0a8;
+										border: 1px solid rgba(100,200,150,0.3);
+									}
+									/* Two-tier tag system */
+									.proj-tags {
+										display: flex;
+										flex-wrap: wrap;
+										gap: 0.4rem;
+										margin-bottom: 0.75rem;
+										align-items: center;
+									}
+									.proj-tag-divider {
+										width: 1px;
+										height: 12px;
+										background: rgba(255,255,255,0.15);
+										margin: 0 0.1rem;
+									}
+									/* Field tags — warm amber tint */
+									.proj-tag-field {
+										font-size: 0.7rem;
+										letter-spacing: 0.05em;
+										font-weight: 600;
+										color: rgba(255, 200, 100, 0.85);
+										background: rgba(255, 180, 50, 0.1);
+										border: 1px solid rgba(255, 180, 50, 0.25);
+										border-radius: 3px;
+										padding: 0.18rem 0.5rem;
+									}
+									/* Tech tags — neutral, as before */
+									.proj-tag-tech {
+										font-size: 0.7rem;
+										letter-spacing: 0.04em;
+										color: rgba(255,255,255,0.4);
+										background: rgba(255,255,255,0.05);
+										border: 1px solid rgba(255,255,255,0.1);
+										border-radius: 3px;
+										padding: 0.18rem 0.5rem;
+									}
+									.proj-desc {
+										font-size: 0.88rem;
+										line-height: 1.7;
+										color: rgba(255,255,255,0.72);
+										margin: 0 0 0.9rem 0;
+									}
+									.proj-links {
+										display: flex;
+										flex-wrap: wrap;
+										gap: 0.5rem;
+										margin-top: 0.75rem;
+									}
+									.proj-link {
+										font-size: 0.72rem;
+										font-weight: 600;
+										letter-spacing: 0.06em;
+										text-transform: uppercase;
+										color: rgba(255,255,255,0.55);
+										border: 1px solid rgba(255,255,255,0.2);
+										border-radius: 3px;
+										padding: 0.25rem 0.7rem;
+										text-decoration: none;
+										transition: color 0.2s, border-color 0.2s, background 0.2s;
+									}
+									.proj-link:hover {
+										color: #ffffff;
+										border-color: rgba(255,255,255,0.55);
+										background: rgba(255,255,255,0.06);
+									}
+									/* Hover-to-play GIF preview */
+									.proj-preview {
+										position: relative;
+										display: inline-block;
+										margin-top: 0.9rem;
+										width: 65%;
+										cursor: default;
+									}
+									.proj-preview img.preview-still,
+									.proj-preview img.preview-gif {
+										display: block;
+										width: 100%;
+										border-radius: 4px;
+										border: 1px solid rgba(255,255,255,0.12);
+									}
+									.proj-preview img.preview-gif {
+										display: none;
+										position: absolute;
+										top: 0; left: 0;
+										height: 100%;
+										object-fit: cover;
+									}
+									.proj-preview:hover img.preview-still { display: none; }
+									.proj-preview:hover img.preview-gif   { display: block; }
+									.proj-preview-hint {
+										margin-top: 0.3rem;
+										font-size: 0.68rem;
+										letter-spacing: 0.05em;
+										color: rgba(255,255,255,0.3);
+										text-transform: uppercase;
+									}
+									.proj-preview-hint::before {
+										content: '▶  ';
+										font-size: 0.6rem;
+									}
+								</style>
 
-									<li>
-                                        <a href="images/Kwako_Thesis.pdf" target="_blank"> <b> Senior thesis: Looking for the Baryon Acoustic Oscillation Signal in the 2MASS Redshift Survey using the Wavelet Transformation. </b> </a> 
-                                        <br>
-                                        Applied wavelet transformations to search for baryon acoustic oscillations (BAOs) - ancient density patterns imprinted on the large-scale structure of the universe - in galaxy distribution data from the 2MASS Redshift Survey. By convolving the survey's density field with a custom 3D wavelet, we identified two BAO signals whose characteristics corroborate results of previous studies, with only a 0.91% probability of occurring by chance. This marked the first application of this method to the 2MRS. Presented at the 223rd Meeting of the American Astronomical Society.
-                                    </li>
-									<br>
+								<ul class="proj-list">
 
-                                    <li> <a href="https://github.com/wkwako/Undergraduate-Senior-Thesis/blob/master/Kwako_Thesis_GitHub.ipynb" target="_blank"><b> Senior thesis code explanations. </b></a>
-                                        <br>
-                                        I created an additional write up that explains in detail the Python code used to determine the characteristic parameters of the baryon acoustic oscillations (BAO). My intent is to make the explanations comprehensible without the scientific background needed to conduct the research.
-                                        <figure>
-                                            <img src="images/wavelets.png" width="50%" height="50%"> 
-                                        </figure>
-                                        <br>
-                                    </li>
-                                    <br>
+									<!-- Project 1: LLM Code Comprehension -->
+									<li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title">Improving Students' Code Comprehension Through LLM-Generated Practice Problems</p>
+											<span class="proj-badge badge-presented">Presented @ NCME 2026</span>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-tag-field">Education</span>
+											<span class="proj-tag-field">Web Development</span>
+											<span class="proj-tag-field">LLM Integration</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">Django</span>
+											<span class="proj-tag-tech">JavaScript</span>
+											<span class="proj-tag-tech">HTML</span>
+											<span class="proj-tag-tech">CSS</span>
+											<span class="proj-tag-tech">OpenAI API</span>
+											<span class="proj-tag-tech">Anthropic API</span>
+										</div>
+										<p class="proj-desc">Built a web application using Django, Python, HTML, CSS, JavaScript and the OpenAI and Anthropic APIs that generates personalized coding exercises to improve students' code comprehension skills. This skill is fundamental to programming but rarely practiced deliberately. Presented at the National Council on Measurement in Education (NCME) 2026.</p>
+										<img src="images/website_image.png" alt="Code comprehension app screenshot" style="width:55%; border-radius:4px; border:1px solid rgba(255,255,255,0.12); margin-top:0.9rem; display:block;">
+										<div class="proj-links">
+											<a href="https://github.com/wkwako/ed-website" target="_blank" class="proj-link">GitHub</a>
+											<a href="https://wkwako.pythonanywhere.com/" target="_blank" class="proj-link">Live Site</a>
+										</div>
+									</li>
 
-                                    <li>
-                                        <b> Ravens' Progressive Matrices Solver </b>
-                                        <br>
-                                        Built a Python program that applies computer vision and pattern analysis to automatically solve Ravens' Progressive Matrices, abstract visual reasoning puzzles used in IQ testing. The solver does not use ML, but instead analyzes pixel-level relationships between matrix cells to identify the underlying visual rule and select the correct answer.
-                                        <br>
-                                    </li>
+									<!-- Project 2: Jump King RL -->
+									<li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title">Jump King AI: Benchmarking Reinforcement and Imitation Learning on a Deterministic Platformer</p>
+											<span class="proj-badge badge-inprogress">In Progress</span>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-tag-field">Game AI</span>
+											<span class="proj-tag-field">Machine Learning</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">C#</span>
+											<span class="proj-tag-tech">Gymnasium</span>
+											<span class="proj-tag-tech">PPO</span>
+											<span class="proj-tag-tech">Behavioural Cloning</span>
+											<span class="proj-tag-tech">Stable Baselines3</span>
+											<span class="proj-tag-tech">dnSpy</span>
+											<span class="proj-tag-tech">.NET / Visual Studio</span>
+										</div>
+										<p class="proj-desc">An ongoing research project comparing RL, BC, A*, and hybrid AI approaches on Jump King — a deterministic platformer where the game's predictability serves as a controlled testbed. I built a full pipeline from scratch, from real-time C# game state extraction using tools like dnSpy and Microsoft's .NET framework, to a custom Gymnasium environment with BC with per-screen data processing, PPO with BC weight transfer and value pretraining, teleporter-based curriculum training, custom reward shaping, and a class-based model management system. Write-up and images in progress.</p>
+										<!-- Swap preview-still src to a screenshot and preview-gif src to your agent GIF when ready -->
+										<div class="proj-preview">
+											<img class="preview-still" src="images/jumpking_still.png" alt="Jump King agent screenshot">
+											<img class="preview-gif"   src="images/jumpking_agent.gif" alt="Jump King agent demo">
+										</div>
+										<p class="proj-preview-hint">hover to preview</p>
+										<div class="proj-links">
+											<a href="https://github.com/wkwako/jump-king-rl" target="_blank" class="proj-link">GitHub</a>
+										</div>
+									</li>
 
-                                    <br>
+									<!-- Project 3: Senior Thesis -->
+									<li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title">Looking for the Baryon Acoustic Oscillation Signal in the 2MASS Redshift Survey using the Wavelet Transformation</p>
+											<span class="proj-badge badge-presented">Presented @ AAS 223</span>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-tag-field">Cosmology</span>
+											<span class="proj-tag-field">Signal Processing</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">NumPy</span>
+											<span class="proj-tag-tech">SciPy</span>
+											<span class="proj-tag-tech">Data Analysis</span>
+										</div>
+										<p class="proj-desc">Applied wavelet transformations to search for baryon acoustic oscillations (BAOs), which are ancient density patterns imprinted on the large-scale structure of the universe. Identified two BAO signals in the 2MASS Redshift Survey with only a 0.91% probability of occurring by chance, which corrobotes previous studies. This marks the first application of this method to the 2MRS. Produced a technical writeup to make the analysis accessible for users without a background in cosmology.</p>
+										<img src="images/wavelets.png" alt="Wavelet analysis plot" style="width:55%; border-radius:4px; border:1px solid rgba(255,255,255,0.12); margin-top:0.9rem; display:block;">
+										<div class="proj-links">
+											<a href="images/Kwako_Thesis.pdf" target="_blank" class="proj-link">Thesis</a>
+											<a href="https://github.com/wkwako/Undergraduate-Senior-Thesis/blob/master/Kwako_Thesis_GitHub.ipynb" target="_blank" class="proj-link">Code Walkthrough</a>
+										</div>
+									</li>
 
-                                    <li>
-                                        <a href=https://github.com/wkwako/Maze-solver/blob/main/MazeSolver(notebook%20version).ipynb target="_blank"> <b> Maze solver. </b></a>
-                                        <br>
-                                        Built a Python program that solves randomly generated mazes using a breadth-first search algorithm, visualizing both the maze and solution with matplotlib.
-                                        <figure>
-                                            <img src="images/mazes.png" width="50%" height="50%">
-                                        </figure>
-                                    </li>
-                                    <br>
-								
-                                </ul> 
+									<!-- Project 4: Ravens -->
+									<li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title">Ravens' Progressive Matrices Solver</p>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-tag-field">Computer Vision</span>
+											<span class="proj-tag-field">Knowledge-Based AI</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">Rule-Based Systems</span>
+											<span class="proj-tag-tech">Image Processing</span>
+										</div>
+										<p class="proj-desc">Built a Python program that automatically solves Ravens' Progressive Matrices, which are abstract visual reasoning puzzles used in IQ testing. The solver analyzes pixel-level relationships between matrix cells to identify the underlying visual rule and select the correct answer.</p>
+									</li>
+
+									<!-- Project 5: Maze Solver -->
+									<li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title">Maze Solver</p>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-tag-field">Graph Algorithms</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">BFS</span>
+											<span class="proj-tag-tech">Matplotlib</span>
+										</div>
+										<p class="proj-desc">Built a Python program that generates random mazes and solves them using a breadth-first search algorithm, visualizing both the maze structure and the solution path with matplotlib.</p>
+										<img src="images/mazes.png" alt="Maze solver screenshot" style="width:55%; border-radius:4px; border:1px solid rgba(255,255,255,0.12); margin-top:0.9rem; display:block;">
+										<div class="proj-links">
+											<a href="https://github.com/wkwako/Maze-solver/blob/main/MazeSolver(notebook%20version).ipynb" target="_blank" class="proj-link">GitHub</a>
+										</div>
+									</li>
+
+								</ul>
 							</article>
 
 						<!-- Resume -->
