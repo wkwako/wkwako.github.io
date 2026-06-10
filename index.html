@@ -61,6 +61,14 @@
 							<article id="projects">
 								<h2 class="major">Projects</h2>
 
+                                <p style="font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-bottom: 1.5rem; line-height: 1.6;">
+                                    A selection of projects spanning AI, education, and research. 
+                                    <span style="color: rgba(255,200,100,0.85);">Amber tags</span> indicate domain, 
+                                    <span style="color: rgba(255,255,255,0.4);">grey tags</span> indicate tools and methods, 
+                                    and <span style="color: #9ecfff;">blue tags</span> indicate university affiliation.
+                                    Links to code, papers, and live demos are included where available.
+                                </p>
+
 								<style>
 									.proj-list {
 										list-style: none;
@@ -114,6 +122,22 @@
 										color: #7de0a8;
 										border: 1px solid rgba(100,200,150,0.3);
 									}
+
+                                    .badge-institution {
+                                        background: rgba(100, 150, 255, 0.12);
+                                        color: #9ecfff;
+                                        border: 1px solid rgba(100, 150, 255, 0.3);
+                                        font-size: 0.7rem;
+                                        letter-spacing: 0.05em;
+                                        font-weight: 600;
+                                        border-radius: 3px;
+                                        padding: 0.18rem 0.5rem;
+                                        vertical-align: middle;
+                                        display: inline-block;
+                                        position: relative;
+                                        top: -2px;
+                                    }
+
 									/* Two-tier tag system */
 									.proj-tags {
 										display: flex;
@@ -228,16 +252,50 @@
 
 								<ul class="proj-list">
 
-									<!-- Project 1: LLM Code Comprehension -->
+                                    <!-- Project 1: Jump King RL -->
+									<li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title"> Benchmarking Reinforcement and Imitation Learning on a Deterministic Platformer: Jump King</p>
+											<span class="proj-badge badge-inprogress">In Progress</span>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-badge badge-institution">Independent Research</span>
+                                            <span class="proj-tag-divider"></span>
+                                            <span class="proj-tag-field">Game AI</span>
+											<span class="proj-tag-field">Machine Learning</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">C#</span>
+											<span class="proj-tag-tech">Gymnasium</span>
+											<span class="proj-tag-tech">PPO</span>
+											<span class="proj-tag-tech">Behavioural Cloning</span>
+											<span class="proj-tag-tech">Stable Baselines3</span>
+											<span class="proj-tag-tech">dnSpy</span>
+											<span class="proj-tag-tech">.NET / Visual Studio</span>
+										</div>
+										<p class="proj-desc">An ongoing research project comparing RL, BC, A*, and hybrid AI approaches on Jump King — a deterministic platformer where the game's predictability serves as a controlled testbed. I built a full pipeline from scratch, from real-time C# game state extraction using tools like dnSpy and Microsoft's .NET framework, to a custom Gymnasium environment with BC with per-screen data processing, PPO with BC weight transfer and value pretraining, curriculum training, custom reward shaping, and a class-based model management system. Write-up and images in progress.</p>
+										<!-- Swap preview-still src to a screenshot and preview-gif src to your agent GIF when ready -->
+										<div class="proj-preview">
+											<img class="preview-still" src="images/agent_preview.png" alt="Jump King agent screenshot">
+											<img class="preview-gif"   src="images/agent_demo.gif" alt="Jump King agent demo">
+										</div>
+										<p class="proj-preview-hint">hover to preview</p>
+										<div class="proj-links">
+											<a href="https://github.com/wkwako/jump-king-rl" target="_blank" class="proj-link">GitHub</a>
+										</div>
+									</li>
+
+									<!-- Project 2: LLM Code Comprehension -->
 									<li class="proj-item">
 										<div class="proj-header">
 											<p class="proj-title">Improving Students' Code Comprehension Through LLM-Generated Practice Problems</p>
 											<span class="proj-badge badge-presented">Presented @ NCME 2026</span>
 										</div>
 										<div class="proj-tags">
+                                            <span class="proj-badge badge-institution">Georgia Tech</span>
+                                            <span class="proj-tag-divider"></span>
 											<span class="proj-tag-field">Education</span>
-											<span class="proj-tag-field">Web Development</span>
-											<span class="proj-tag-field">LLM Integration</span>
+											<span class="proj-tag-field">Full Stack</span>
                                             <span class="proj-tag-field">Agentic AI</span>
 											<span class="proj-tag-divider"></span>
 											<span class="proj-tag-tech">Python</span>
@@ -257,45 +315,16 @@
 										</div>
 									</li>
 
-									<!-- Project 2: Jump King RL -->
-									<li class="proj-item">
-										<div class="proj-header">
-											<p class="proj-title"> Benchmarking Reinforcement and Imitation Learning on a Deterministic Platformer: Jump King</p>
-											<span class="proj-badge badge-inprogress">In Progress</span>
-										</div>
-										<div class="proj-tags">
-											<span class="proj-tag-field">Game AI</span>
-											<span class="proj-tag-field">Machine Learning</span>
-											<span class="proj-tag-divider"></span>
-											<span class="proj-tag-tech">Python</span>
-											<span class="proj-tag-tech">C#</span>
-											<span class="proj-tag-tech">Gymnasium</span>
-											<span class="proj-tag-tech">PPO</span>
-											<span class="proj-tag-tech">Behavioural Cloning</span>
-											<span class="proj-tag-tech">Stable Baselines3</span>
-											<span class="proj-tag-tech">dnSpy</span>
-											<span class="proj-tag-tech">.NET / Visual Studio</span>
-										</div>
-										<p class="proj-desc">An ongoing research project comparing RL, BC, A*, and hybrid AI approaches on Jump King — a deterministic platformer where the game's predictability serves as a controlled testbed. I built a full pipeline from scratch, from real-time C# game state extraction using tools like dnSpy and Microsoft's .NET framework, to a custom Gymnasium environment with BC with per-screen data processing, PPO with BC weight transfer and value pretraining, teleporter-based curriculum training, custom reward shaping, and a class-based model management system. Write-up and images in progress.</p>
-										<!-- Swap preview-still src to a screenshot and preview-gif src to your agent GIF when ready -->
-										<div class="proj-preview">
-											<img class="preview-still" src="images/agent_preview.png" alt="Jump King agent screenshot">
-											<img class="preview-gif"   src="images/agent_demo.gif" alt="Jump King agent demo">
-										</div>
-										<p class="proj-preview-hint">hover to preview</p>
-										<div class="proj-links">
-											<a href="https://github.com/wkwako/jump-king-rl" target="_blank" class="proj-link">GitHub</a>
-										</div>
-									</li>
-
 									<!-- Project 3: Senior Thesis -->
 									<li class="proj-item">
 										<div class="proj-header">
 											<p class="proj-title">Looking for the Baryon Acoustic Oscillation Signal in the 2MASS Redshift Survey using the Wavelet Transformation</p>
-											<span class="proj-badge badge-presented">Presented @ AAS 223</span>
+                                            <span class="proj-badge badge-presented">Presented @ AAS 223</span>
 										</div>
 										<div class="proj-tags">
-											<span class="proj-tag-field">Cosmology</span>
+											<span class="proj-badge badge-institution">Willamette University</span>
+                                            <span class="proj-tag-divider"></span>
+                                            <span class="proj-tag-field">Cosmology</span>
 											<span class="proj-tag-field">Signal Processing</span>
 											<span class="proj-tag-divider"></span>
 											<span class="proj-tag-tech">Python</span>
@@ -311,13 +340,38 @@
 										</div>
 									</li>
 
-									<!-- Project 4: Ravens -->
+                                    <!-- Project: Schema Activation / CogSci -->
+                                    <li class="proj-item">
+                                        <div class="proj-header">
+                                            <p class="proj-title">Schema Activation via Source Attribution: Does Labeling a Passage as AI-Authored Affect Immediate Recall?</p>
+                                        </div>
+                                        <div class="proj-tags">
+                                            <span class="proj-badge badge-institution">Georgia Tech</span>
+                                            <span class="proj-tag-divider"></span>
+                                            <span class="proj-tag-field">Cognitive Science</span>
+                                            <span class="proj-tag-field">Human-AI Interaction</span>
+                                            <span class="proj-tag-field">Education</span>
+                                            <span class="proj-tag-divider"></span>
+                                            <span class="proj-tag-tech">Experiment Design</span>
+                                            <span class="proj-tag-tech">Qualitative Coding</span>
+                                            <span class="proj-tag-tech">Survey Design</span>
+                                            <span class="proj-tag-tech">Statistical Analysis</span>
+                                        </div>
+                                        <p class="proj-desc">Investigated whether labeling a passage as AI-authored activates a source-credibility schema that affects immediate memory recall. Recruited 22 participants across three experimental groups exposed to identical passages attributed to different sources: a published book, a YouTube lecture, and ChatGPT. Participants in the AI-labeled group scored nearly 17 percentage points higher on recall than other groups, suggesting AI-authored sources activate a low-credibility, high-skepticism schema that improves memory recall. Findings have direct implications for how students engage with AI-generated educational material.</p>
+                                        <div class="proj-links">
+                                            <a href="images/Kwako_CogSci.pdf" target="_blank" class="proj-link">Paper</a>
+                                        </div>
+                                    </li>
+
+									<!-- Project 5: Ravens -->
 									<li class="proj-item">
 										<div class="proj-header">
 											<p class="proj-title">Ravens' Progressive Matrices Solver</p>
 										</div>
 										<div class="proj-tags">
-											<span class="proj-tag-field">Computer Vision</span>
+											<span class="proj-badge badge-institution">Georgia Tech</span>
+                                            <span class="proj-tag-divider"></span>
+                                            <span class="proj-tag-field">Computer Vision</span>
 											<span class="proj-tag-field">Knowledge-Based AI</span>
 											<span class="proj-tag-divider"></span>
 											<span class="proj-tag-tech">Python</span>
@@ -327,7 +381,7 @@
 										<p class="proj-desc">Built a Python program that automatically solves Ravens' Progressive Matrices, which are abstract visual reasoning puzzles used in IQ testing. The solver analyzes pixel-level relationships between matrix cells to identify the underlying visual rule and select the correct answer.</p>
 									</li>
 
-									<!-- Project 5: Maze Solver -->
+									<!-- Project 5: Maze Solver
 									<li class="proj-item">
 										<div class="proj-header">
 											<p class="proj-title">Maze Solver</p>
@@ -344,7 +398,7 @@
 										<div class="proj-links">
 											<a href="https://github.com/wkwako/Maze-solver/blob/main/MazeSolver(notebook%20version).ipynb" target="_blank" class="proj-link">GitHub</a>
 										</div>
-									</li>
+									</li> -->
 
 								</ul>
 							</article>
