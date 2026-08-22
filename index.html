@@ -273,7 +273,7 @@
 											<span class="proj-tag-tech">dnSpy</span>
 											<span class="proj-tag-tech">.NET / Visual Studio</span>
 										</div>
-										<p class="proj-desc">An ongoing research project comparing RL, BC, A*, and hybrid AI approaches on Jump King — a deterministic platformer where the game's predictability serves as a controlled testbed. I built a full pipeline from scratch, from real-time C# game state extraction using tools like dnSpy and Microsoft's .NET framework, to a custom Gymnasium environment with per-screen data processing, PPO with BC weight transfer and value pretraining, curriculum training, custom reward shaping, and a class-based model management system. Write-up and images in progress.</p>
+										<p class="proj-desc">An ongoing research project comparing RL, BC, and BC+RL approaches on Jump King — a deterministic platformer whose predictability serves as a controlled testbed. I built a full pipeline from scratch: real-time game-state extraction from the live commercial game via a custom C# mod (using dnSpy decompilation and the game's modding API) communicating with Python over a TCP socket, a custom Gymnasium environment with per-screen state/action processing, PPO with behavioral-cloning weight transfer, per-screen reward shaping, and a class-based model-management and evaluation system. Write-up and demo in progress.</p>
 										<!-- Swap preview-still src to a screenshot and preview-gif src to your agent GIF when ready -->
 										<div class="proj-preview">
 											<img class="preview-still" src="images/agent_preview.png" alt="Jump King agent screenshot">
