@@ -307,7 +307,7 @@
 											<span class="proj-tag-tech">Anthropic API</span>
                                             <span class="proj-tag-tech">Prompt Engineering</span>
 										</div>
-										<p class="proj-desc">Built a web application using Django, Python, HTML, CSS, JavaScript and the OpenAI and Anthropic APIs that generates personalized coding exercises to improve students' code comprehension skills. This skill is fundamental to programming but rarely practiced deliberately. Presented at the National Council on Measurement in Education (NCME) 2026.</p>
+										<p class="proj-desc">Built a web application using Django, Python, HTML, CSS, JavaScript and the OpenAI and Anthropic APIs that generates personalized coding exercises to improve students' code comprehension skills. The app is built on a multi-model agentic pipeline with conditional routing, prompt chaining, input validation, and guardrails across LLM APIs. This skill is fundamental to programming but rarely practiced deliberately. Presented at the National Council on Measurement in Education (NCME) 2026.</p>
 										<img src="images/website_image.png" alt="Code comprehension app screenshot" style="width:55%; border-radius:4px; border:1px solid rgba(255,255,255,0.12); margin-top:0.9rem; display:block;">
 										<div class="proj-links">
 											<a href="https://github.com/wkwako/ed-website" target="_blank" class="proj-link">GitHub</a>
@@ -315,7 +315,34 @@
 										</div>
 									</li>
 
-									<!-- Project 3: Senior Thesis -->
+                                    <!-- Project 3: Predicting Speedrunner Retention from Activity Patterns -->
+                                     <li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title">Predicting Speedrunner Retention from Activity Patterns</p>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-badge badge-institution">Independent Research</span>
+                                            <span class="proj-tag-divider"></span>
+                                            <span class="proj-tag-field">Data Engineering</span>
+											<span class="proj-tag-field">Machine Learning</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">NumPy</span>
+											<span class="proj-tag-tech">PyTorch</span>
+											<span class="proj-tag-tech">scikit-learn</span>
+                                            <span class="proj-tag-tech">Logistic Regression</span>
+                                            <span class="proj-tag-tech">Gradient Boosting</span>
+                                            <span class="proj-tag-tech">Neural Networks</span>
+                                            <span class="proj-tag-tech">SQLite</span>
+										</div>
+										<p class="proj-desc">Built an end-to-end pipeline predicting whether a speedrunner will keep submitting runs, using behavioral features derived from speedrun.com's API. Ingested, cleaned, cached, and stored run data in a local SQLite database, then engineered features capturing recency, frequency, submission consistency, and run density. Compared four model families (logistic regression, gradient boosting, an MLP, and cross-validated baselines) across three games, reaching an AUC of ~0.79 on a leakage-controlled temporal split. Controlled for temporal leakage (never training on future data), and identity leakage (no runner appears in both train and test sets), then used cross-validation as a benchmark of how much temporal leakage would inflate AUC results (difference of ~0.09 AUC). Found that recency dominates prediction so thoroughly that other added features add noise, potentially reducing AUC.</p>
+										<img src="images/fi_Hollow_Knight.png" alt="Feature importance plot" style="width:35%; border-radius:4px; border:1px solid rgba(255,255,255,0.12); margin-top:0.9rem; display:block;">
+                                        <div class="proj-links">
+											<a href="https://github.com/wkwako/obsolete-run-analysis" target="_blank" class="proj-link">GitHub</a>
+										</div>
+									</li>
+
+									<!-- Project 4: Senior Thesis -->
 									<li class="proj-item">
 										<div class="proj-header">
 											<p class="proj-title">Looking for the Baryon Acoustic Oscillation Signal in the 2MASS Redshift Survey using the Wavelet Transformation</p>
@@ -340,7 +367,7 @@
 										</div>
 									</li>
 
-                                    <!-- Project: Schema Activation / CogSci -->
+                                    <!-- Project 5: Schema Activation / CogSci -->
                                     <li class="proj-item">
                                         <div class="proj-header">
                                             <p class="proj-title">Schema Activation via Source Attribution: Does Labeling a Passage as AI-Authored Affect Immediate Recall?</p>
@@ -363,7 +390,7 @@
                                         </div>
                                     </li>
 
-									<!-- Project 5: Raven's -->
+									<!-- Project: Raven's -->
 									<li class="proj-item">
 										<div class="proj-header">
 											<p class="proj-title">Raven's Progressive Matrices Solver</p>
@@ -378,7 +405,7 @@
 											<span class="proj-tag-tech">Rule-Based Systems</span>
 											<span class="proj-tag-tech">Image Processing</span>
 										</div>
-										<p class="proj-desc">Built a Python program that automatically solves Ravens' Progressive Matrices, which are abstract visual reasoning puzzles used in IQ testing. The solver analyzes pixel-level relationships between matrix cells to identify the underlying visual rule and select the correct answer.</p>
+										<p class="proj-desc">Built a Python program that automatically solves Raven's Progressive Matrices, which are abstract visual reasoning puzzles used in IQ testing. The solver analyzes pixel-level relationships between matrix cells to identify the underlying visual rule and select the correct answer.</p>
 									</li>
 
 									<!-- Project 5: Maze Solver
