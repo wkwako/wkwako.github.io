@@ -33,7 +33,7 @@
 							<div class="inner">
 								<h1>William Kwako</h1>
 								<img src="images/Kwako_headshot.png" style="width:35%; object-fit: cover;">
-								<p>MS CS @ Georgia Tech. I like puzzles and things.</p>
+								<p>MS CS @ Georgia Tech. I build AI systems for games and education</p>
 							</div>
 						</div>
 						<nav>
@@ -256,7 +256,6 @@
 									<li class="proj-item">
 										<div class="proj-header">
 											<p class="proj-title"> Benchmarking Reinforcement and Imitation Learning on a Deterministic Platformer: Jump King</p>
-											<span class="proj-badge badge-inprogress">In Progress</span>
 										</div>
 										<div class="proj-tags">
 											<span class="proj-badge badge-institution">Independent Research</span>
@@ -273,7 +272,7 @@
 											<span class="proj-tag-tech">dnSpy</span>
 											<span class="proj-tag-tech">.NET / Visual Studio</span>
 										</div>
-										<p class="proj-desc">An ongoing research project comparing RL, BC, and BC+RL approaches on Jump King, a deterministic platformer whose predictability serves as a controlled testbed. I built a full pipeline from scratch: real-time game-state extraction from the live commercial game via a custom C# mod (using dnSpy decompilation and the game's modding API) communicating with Python over a TCP socket, a custom Gymnasium environment with per-screen state/action processing, PPO with behavioral-cloning weight transfer, per-screen reward shaping, and a class-based model-management and evaluation system. Write-up and demo in progress.</p>
+										<p class="proj-desc">A research project comparing reinforcement learning (RL), behavioral cloning (BC), and BC+RL approaches on Jump King, a deterministic platformer whose predictability makes it a clean, controlled testbed. I built the full pipeline from scratch: a custom C# mod (via dnSpy decompilation and the game's modding API) extracts real-time game state from the live commercial game and streams it to Python over a TCP socket. From there, a custom Gymnasium environment handles per-screen state and action processing, PPO with behavioral-cloning weight transfer drives training, and a class-based model-management and evaluation system coordinates reward shaping and results across screens. BC+RL completed every level (77.8–100% completion rate) while pure RL reached 0% on every level with environmental hazards or that required high precision. The first game completion was achieved in 9:00.855 minutes.</p>
 										<!-- Swap preview-still src to a screenshot and preview-gif src to your agent GIF when ready -->
 										<div class="proj-preview">
 											<img class="preview-still" src="images/agent_preview.png" alt="Jump King agent screenshot">
@@ -336,7 +335,7 @@
                                             <span class="proj-tag-tech">Neural Networks</span>
                                             <span class="proj-tag-tech">SQLite</span>
 										</div>
-										<p class="proj-desc">Built an end-to-end pipeline predicting whether a speedrunner will keep submitting runs, using behavioral features derived from speedrun.com's API. Ingested, cleaned, cached, and stored run data in a local SQLite database, then engineered features capturing recency, frequency, submission consistency, and run density. Compared four model families (logistic regression, gradient boosting, an MLP, and cross-validated baselines) across three games, reaching ~0.79 AUC on splits controlled for temporal leakage (never training on future data) and identity leakage (no runner appears in both train and test sets). Used cross-validation as a benchmark of how much temporal leakage would inflate AUC results (difference of ~0.09 AUC). Found that recency dominates prediction so thoroughly that other features add noise, potentially reducing AUC.</p>
+										<p class="proj-desc">Built an end-to-end pipeline predicting whether a speedrunner will keep submitting runs, using behavioral features derived from speedrun.com's API. Ingested, cleaned, cached, and stored run data in a local SQLite database, then engineered features capturing recency, frequency, submission consistency, and run density. Compared four model families (logistic regression, gradient boosting, an MLP, and cross-validated baselines) across three games, reaching ~0.79 AUC on splits controlled for temporal leakage (never training on future data) and identity leakage (no runner appears in both train and test sets). Used cross-validation as a benchmark of how much temporal leakage would inflate AUC results (difference of ~0.09 AUC). Found that recency dominates prediction.</p>
 										<div style="display:flex; gap:0.9rem; margin-top:0.9rem; align-items:flex-start;">
                                             <img src="images/matrix_plot_spearman_Hollow_Knight.png" alt="Feature correlation plot" style="width:30%; border-radius:4px; border:1px solid rgba(255,255,255,0.12);">
                                             <img src="images/fi_Hollow_Knight.png" alt="Feature importance plot" style="width:35%; border-radius:4px; border:1px solid rgba(255,255,255,0.12);">
