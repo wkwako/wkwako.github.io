@@ -273,7 +273,6 @@
 											<span class="proj-tag-tech">.NET / Visual Studio</span>
 										</div>
 										<p class="proj-desc">A research project comparing reinforcement learning (RL), behavioral cloning (BC), and BC+RL approaches on Jump King, a deterministic platformer whose predictability makes it a clean, controlled testbed. I built the full pipeline from scratch: a custom C# mod (via dnSpy decompilation and the game's modding API) extracts real-time game state from the live commercial game and streams it to Python over a TCP socket. From there, a custom Gymnasium environment handles per-screen state and action processing, PPO with behavioral-cloning weight transfer drives training, and a class-based model-management and evaluation system coordinates reward shaping and results across screens. BC+RL completed every level (77.8–100% completion rate) while pure RL reached 0% on every level with environmental hazards or that required high precision. The first game completion was achieved in 9:00.855 minutes.</p>
-										<!-- Swap preview-still src to a screenshot and preview-gif src to your agent GIF when ready -->
 										<div class="proj-preview">
 											<img class="preview-still" src="images/agent_preview.png" alt="Jump King agent screenshot">
 											<img class="preview-gif"   src="images/agent_demo.gif" alt="Jump King agent demo">
@@ -338,7 +337,8 @@
                                             <span class="proj-tag-tech">Anthropic API</span>
 										</div>
 										<p class="proj-desc">Created a web application that helps writers improve by generating targeted feedback on submitted passages, built to test whether a multi-agent architecture produces better feedback than a single model call. Using LangGraph, six specialized analyzer nodes (grammar, vocabulary, topic adherence, structure, paragraph anatomy, and fitness for purpose) evaluate a passage in parallel, and a synthesis node reconciles their critiques into a single prioritized response. RAG (via Chroma) injects genre exemplars and rubric criteria into targeted nodes to ground the feedback. To measure whether any of this actually helps, I built a controlled evaluation: each condition's feedback is applied by a fixed rewriter model, and the rewritten passages are compared by a judge from a different model family (to avoid self-preference bias), with every comparison run in both orderings to control for position bias. Across four experiments I varied analyzer strength, synthesis strength, and RAG. The results showed that the multi-agent architecture beats a single call at matched model tier, that analyzer model strength, not the synthesis step, is the performance bottleneck, and that RAG contributes a marginal but real effect, converting ties into wins  against a strong baseline. The tool uses local embeddings and runs six cheap model calls per feedback request.</p>
-										<div class="proj-links">
+										<img src="images/model_comparison_results.png" alt="Code comprehension app screenshot" style="width:38%; border-radius:4px; border:1px solid rgba(255,255,255,0.12); margin-top:0.9rem; display:block;">
+                                        <div class="proj-links">
 											<a href="https://github.com/wkwako/academic-writing-tutor" target="_blank" class="proj-link">GitHub</a>
 										</div>
 									</li>
