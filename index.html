@@ -252,6 +252,38 @@
 
 								<ul class="proj-list">
 
+                                    <!-- Project: Prior Authorization Checker -->
+									<li class="proj-item">
+										<div class="proj-header">
+											<p class="proj-title">Predicting Medicare Coverage from FHIR Records with RAG and LLMs</p>
+										</div>
+										<div class="proj-tags">
+											<span class="proj-badge badge-institution">Independent Research</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-field">Healthcare AI</span>
+											<span class="proj-tag-field">LLM Evaluation</span>
+                                            <span class="proj-tag-field">Agentic AI</span>
+											<span class="proj-tag-field">Deployment</span>
+											<span class="proj-tag-divider"></span>
+											<span class="proj-tag-tech">Python</span>
+											<span class="proj-tag-tech">FastAPI</span>
+											<span class="proj-tag-tech">Chroma</span>
+											<span class="proj-tag-tech">RAG</span>
+											<span class="proj-tag-tech">Anthropic API</span>
+											<span class="proj-tag-tech">FHIR</span>
+											<span class="proj-tag-tech">Azure</span>
+											<span class="proj-tag-tech">nginx</span>
+											<span class="proj-tag-tech">GitHub Actions</span>
+											<span class="proj-tag-tech">SQLite</span>
+										</div>
+										<p class="proj-desc">Built a prior authorization checker that predicts whether Medicare will cover an order, given a patient's FHIR record. The tool retrieves the governing coverage policy (LCD) from a corpus of about 25 similar sleep-related policies, then judges each of the policy's clinical criteria as met, not met, or insufficient information, citing evidence from the record. When evidence is missing, it says so rather than guessing, since a false "covered" is the costliest error. To measure accuracy, I built 72 synthetic test cases from Synthea patients, each changing one criterion from a fully qualifying patient so the correct answer was known by construction, and held out a second policy to test generalization. Across 5 runs per case, the tool selected the right policy 98–99.5% of the time and reached 89–94% decision accuracy, with false "covered" decisions in under 3% of judgments. I traced the remaining errors to specific criteria, and kept one flawed answer key unchanged rather than fixing it after seeing results. The demo runs on an Azure VM (nginx, gunicorn, systemd, HTTPS) with CI/CD through GitHub Actions, and serves precomputed results so the server holds no API key. The figure below displays the evaluation results from the held-out set in a confusion matrix.</p>
+										<img src="images/L38307_prior_auth_results.png" alt="Prior authorization checker results page" style="width:55%; border-radius:4px; border:1px solid rgba(255,255,255,0.12); margin-top:0.9rem; display:block;">
+										<div class="proj-links">
+											<a href="https://github.com/wkwako/healthcare-ai-tools" target="_blank" class="proj-link">GitHub</a>
+											<a href="https://healthcare.williamkwako.com" target="_blank" class="proj-link">Live Site</a>
+										</div>
+									</li>
+
                                     <!-- Project: Jump King RL -->
 									<li class="proj-item">
 										<div class="proj-header">
